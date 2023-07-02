@@ -10,7 +10,7 @@ FROM golang:${GO_VER}-alpine${ALPINE_VER} as builder
 WORKDIR /
 COPY . .
 
-RUN go mod tidy
+RUN go mod download
 RUN go build -o external .
 
 FROM alpine:${ALPINE_VER}
